@@ -21,14 +21,15 @@ app.get('/', (req, res) => {
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
-app.use(express.static(path.join(__dirname, '../client/src')));
+const staticFilesPath = path.join(__dirname, '../client/build');
+app.use(express.static(staticFilesPath));
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/companies', companyRoutes);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/src/index.tsx"));
+  res.sendFile(path.join(staticFilesPath, 'index.html'));
 });
 
 const PORT = process.env.PORT || 8080;
