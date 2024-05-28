@@ -42,6 +42,7 @@ export default function DropFile() {
 
   React.useEffect(() => {
     const config = {
+      apikey: process.env.API_KEY,
       sampleRows: 100,
       model: "gpt-3.5-turbo",
     };
