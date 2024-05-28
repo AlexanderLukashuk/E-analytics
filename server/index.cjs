@@ -1,13 +1,13 @@
-import express from 'express';
-import * as dotenv from 'dotenv';
-import cors from 'cors';
-import path from 'path';
+const express = require('express');
+const dotenv = require('dotenv');
+const cors = require('cors');
+const path = require('path');
 
-import connectDB from './mongodb/connect.js';
-import userRoutes from './routes/user.routes.js';
-import productRoutes from './routes/product.routes.js';
-import authRoutes from './routes/auth.routes.js';
-import companyRoutes from './routes/company.routes.js';
+const connectDB = require('./mongodb/connect.js');
+const userRoutes = require('./routes/user.routes.js');
+const productRoutes = require('./routes/product.routes.js');
+const authRoutes = require('./routes/auth.routes.js');
+const companyRoutes = require('./routes/company.routes.js');
 
 dotenv.config();
 

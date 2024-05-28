@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "index.js",
+  "main": "index.cjs",
   "scripts": {
     "start": "nodemon index",
     "build-client": "cd ../client && npm install && npm run build"
