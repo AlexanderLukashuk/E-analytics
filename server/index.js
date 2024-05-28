@@ -19,6 +19,8 @@ app.get('/', (req, res) => {
   res.send({ message: 'Hello World!' });
 });
 
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+
 app.use(express.static(path.join(__dirname, '../client/src')));
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
