@@ -29,7 +29,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/companies', companyRoutes);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(staticFilesPath, 'index.html'));
+  res.sendFile(path.join(staticFilesPath, 'index.tsx'));
 });
 
 const PORT = process.env.PORT || 8080;
