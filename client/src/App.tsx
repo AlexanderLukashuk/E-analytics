@@ -68,20 +68,6 @@ const Layout = ({ children }) => {
     <div className={currentMode === "Dark" ? "dark" : ""}>
       <div className="flex relative dark:bg-main-dark-bg">
         <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
-          <TooltipComponent content="ChatBot" position="Top">
-            <button
-              type="button"
-              onClick={() => setChatModalOpen(true)}
-              style={{
-                background: currentColor,
-                borderRadius: "50%",
-                marginBottom: "8px",
-              }}
-              className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
-            >
-              <BsMessenger />
-            </button>
-          </TooltipComponent>
           <TooltipComponent content="TelegramBot" position="Top">
             <a href="https://t.me/eanalitics_bot">
               <button
@@ -153,9 +139,7 @@ const App = () => {
                 <Route
                   path="/ecommerce"
                   element={
-                    <ProtectedRoute>
-                      <CompanyDataGrid />
-                    </ProtectedRoute>
+                    <ProtectedRoute><CompanyDataGrid /></ProtectedRoute>
                   }
                 />
                 <Route path="/forbidden" element={<Forbidden />} />
