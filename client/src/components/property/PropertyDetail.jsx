@@ -4,7 +4,7 @@ function PropertyDetail({ propertyId }) {
   const [property, setProperty] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/v1/properties/${propertyId}`)
+    fetch(`https://eanalytics.fly.dev/api/v1/properties/${propertyId}`)
       .then(response => response.json())
       .then(data => setProperty(data))
       .catch(error => console.error('Error fetching property:', error));

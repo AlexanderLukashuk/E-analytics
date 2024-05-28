@@ -11,7 +11,7 @@ const UpdateCompany = () => {
         const fetchCompanyData = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get(`http://localhost:8080/api/companies/${id}`, {
+                const response = await axios.get(`https://eanalytics.fly.dev/api/companies/${id}`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -34,7 +34,7 @@ const UpdateCompany = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:8080/api/companies/${id}`, companyData, {
+            await axios.put(`https://eanalytics.fly.dev/api/companies/${id}`, companyData, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

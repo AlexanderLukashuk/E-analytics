@@ -39,14 +39,14 @@ const AreaChart = () => {
     const fetchRevenueData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`http://localhost:8080/api/companies/user/${userId}`, {
+        const response = await axios.get(`https://eanalytics.fly.dev/api/companies/user/${userId}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
         });
 
         const companies = response.data;
-        const promises = companies.map(company => axios.get(`http://localhost:8080/api/companies/${company._id}/revenue-by-month-and-year`, {
+        const promises = companies.map(company => axios.get(`https://eanalytics.fly.dev/api/companies/${company._id}/revenue-by-month-and-year`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

@@ -21,7 +21,7 @@ const CompanyDataGrid = () => {
             try {
                 setLoading(true);
                 const token = localStorage.getItem('token');
-                const response = await axios.get(`http://localhost:8080/api/companies/${companyId}`, {
+                const response = await axios.get(`https://eanalytics.fly.dev/api/companies/${companyId}`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }

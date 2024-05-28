@@ -9,7 +9,7 @@ const ProtectedRoute = ({ children }) => {
         if (!token) {
             setIsValidToken(false);
         } else {
-            fetch('http://localhost:8080/api/auth/check-token', {
+            fetch('https://eanalytics.fly.dev/api/auth/check-token', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

@@ -8,7 +8,7 @@ const CompanyList = () => {
     const fetchCompanies = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:8080/api/companies', {
+        const response = await fetch('https://eanalytics.fly.dev/api/companies', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`

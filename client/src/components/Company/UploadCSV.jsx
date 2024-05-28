@@ -14,7 +14,7 @@ const UploadCSV = ({ companyId }) => {
         formData.append('file', file);
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:8080/api/companies/${companyId}/upload`, formData, {
+            await axios.put(`https://eanalytics.fly.dev/api/companies/${companyId}/upload`, formData, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

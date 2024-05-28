@@ -21,7 +21,7 @@ const CompanyDataGrid = () => {
             try {
                 setLoading(true);
                 const token = localStorage.getItem('token');
-                const response = await axios.get('http://localhost:8080/api/companies', {
+                const response = await axios.get('https://eanalytics.fly.dev/api/companies', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -85,7 +85,7 @@ const CompanyDataGrid = () => {
         if (confirmed) {
             try {
                 const token = localStorage.getItem('token');
-                await axios.delete(`http://localhost:8080/api/companies/${companyId}`, {
+                await axios.delete(`https://eanalytics.fly.dev/api/companies/${companyId}`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }

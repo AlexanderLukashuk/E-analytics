@@ -46,7 +46,7 @@ const DropFileInput = (props) => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:8080/api/companies/${companyId}/upload`,
+        `https://eanalytics.fly.dev/api/companies/${companyId}/upload`,
         formData,
         {
           headers: {

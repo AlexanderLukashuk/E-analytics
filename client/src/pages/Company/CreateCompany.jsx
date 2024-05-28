@@ -13,7 +13,7 @@ const CreateCompany = () => {
         if (!token) {
             navigate('/forbidden');
         } else {
-            fetch('http://localhost:8080/api/auth/check-token', {
+            fetch('https://eanalytics.fly.dev/api/auth/check-token', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -47,7 +47,7 @@ const CreateCompany = () => {
                 ...companyData,
                 ownerId: userId
             };
-            const response = await fetch('http://localhost:8080/api/companies/create', {
+            const response = await fetch('https://eanalytics.fly.dev/api/companies/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

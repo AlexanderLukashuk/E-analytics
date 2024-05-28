@@ -4,7 +4,7 @@ function PropertyList() {
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/v1/properties')
+    fetch('https://eanalytics.fly.dev/api/v1/properties')
       .then(response => response.json())
       .then(data => setProperties(data))
       .catch(error => console.error('Error fetching properties:', error));

@@ -4,7 +4,7 @@ function UserList() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/v1/users')
+    fetch('https://eanalytics.fly.dev/api/v1/users')
       .then(response => response.json())
       .then(data => setUsers(data))
       .catch(error => console.error('Error fetching users:', error));
