@@ -23,11 +23,13 @@ app.use('/api/products', productRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/companies', companyRoutes);
 
+const PORT = process.env.PORT || 8080;
+
 const startServer = async () => {
   try {
     connectDB(process.env.MONGODB_URL);
 
-    app.listen(8080, () => console.log('Server started on port http://localhost:8080'));
+    app.listen(PORT, () => console.log(`Server started on port http://localhost:${PORT}`));
   } catch (error) {
     console.log(error);
   }
