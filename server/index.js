@@ -1,13 +1,13 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const path = require('path');
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import path from 'path';
 
-const connectDB = require('./mongodb/connect.js');
-const userRoutes = require('./routes/user.routes.js');
-const productRoutes = require('./routes/product.routes.js');
-const authRoutes = require('./routes/auth.routes.js');
-const companyRoutes = require('./routes/company.routes.js');
+import connectDB from './mongodb/connect.js';
+import userRoutes from './routes/user.routes.js';
+import productRoutes from './routes/product.routes.js';
+import authRoutes from './routes/auth.routes.js';
+import companyRoutes from './routes/company.routes.js';
 
 dotenv.config();
 
@@ -17,7 +17,7 @@ app.use(express.json({ limit: '50mb' }));
 
 app.get('/', (req, res) => {
   res.send({ message: 'Hello World!' });
-})
+});
 
 app.use(express.static(path.join(__dirname, '../client/src')));
 app.use('/api/users', userRoutes);
@@ -33,12 +33,12 @@ const PORT = process.env.PORT || 8080;
 
 const startServer = async () => {
   try {
-    connectDB(process.env.MONGODB_URL);
+    await connectDB(process.env.MONGODB_URL);
 
     app.listen(PORT, () => console.log(`Server started on port http://localhost:${PORT}`));
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 startServer();
