@@ -1,6 +1,7 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
+import path from 'path';
 
 import connectDB from './mongodb/connect.js';
 import userRoutes from './routes/user.routes.js';
@@ -18,10 +19,15 @@ app.get('/', (req, res) => {
   res.send({ message: 'Hello World!' });
 })
 
+app.use(express.static(path.join(__dirname, 'client/build')));
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/companies', companyRoutes);
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 const PORT = process.env.PORT || 8080;
 
