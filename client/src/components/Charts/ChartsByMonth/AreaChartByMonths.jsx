@@ -1,12 +1,12 @@
-import { 
-  ChartComponent, 
-  SeriesCollectionDirective, 
-  SeriesDirective, 
-  Inject, 
-  AreaSeries, 
-  Category, 
-  Legend, 
-  Tooltip 
+import {
+  ChartComponent,
+  SeriesCollectionDirective,
+  SeriesDirective,
+  Inject,
+  AreaSeries,
+  Category,
+  Legend,
+  Tooltip
 } from '@syncfusion/ej2-react-charts';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';

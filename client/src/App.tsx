@@ -49,7 +49,9 @@ const Layout = ({ children }) => {
   const isAuthPage =
     location.pathname === "/" ||
     location.pathname === "/signin" ||
-    location.pathname === "/signup";
+    location.pathname === "/signup" ||
+    location.pathname === "*" ||
+    location.pathname === "/forbidden";
 
   useEffect(() => {
     const currentThemeColor = localStorage.getItem("colorMode");
@@ -139,7 +141,9 @@ const App = () => {
                 <Route
                   path="/ecommerce"
                   element={
-                    <ProtectedRoute><CompanyDataGrid /></ProtectedRoute>
+                    <ProtectedRoute>
+                      <CompanyDataGrid />
+                    </ProtectedRoute>
                   }
                 />
                 <Route path="/forbidden" element={<Forbidden />} />

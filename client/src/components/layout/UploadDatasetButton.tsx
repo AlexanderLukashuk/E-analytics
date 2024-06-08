@@ -37,9 +37,12 @@ export function UploadDatasetButton(props: UploadDatasetButtonProps) {
 
   return (
     <>
-      <Buttons className={styles.uploadButton} onClick={handleUploadFileClick}>
-        Upload Data&nbsp; <FiUpload />
-      </Buttons>
+      <button
+        className="px-5 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 focus:outline-none "
+        onClick={handleUploadFileClick}
+      >
+        Upload &nbsp;
+      </button>
       <input
         ref={inputFileRef}
         hidden

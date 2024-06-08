@@ -7,7 +7,7 @@ function CreateUserForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     try {
       const response = await fetch('https://eanalytics.fly.dev/api/v1/users', {
         method: 'POST',

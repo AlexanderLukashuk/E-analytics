@@ -78,7 +78,6 @@ class GA implements IGA {
 
     this._isInitialized = true;
   };
-  // https://developers.google.com/analytics/devguides/collection/ga4/events?client_type=gtag
   report = (...args: any[]) => {
     gtag(...args);
   };

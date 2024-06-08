@@ -25,7 +25,6 @@ import gtag from "../lib/gtag.ts";
 
 export default function DropFile() {
   const [view, setView] = React.useState("dashboard");
-
   const [settings, setSettings] = React.useState<ISettings>({
     apikey: "",
     sampleRows: 10,
@@ -41,8 +40,9 @@ export default function DropFile() {
   const [showSettings, setShowSettings] = React.useState(false);
 
   React.useEffect(() => {
+    const key = process.env.REACT_APP_API;
     const config = {
-      apikey: process.env.API_KEY,
+      apikey: key,
       sampleRows: 100,
       model: "gpt-3.5-turbo",
     };
@@ -127,15 +127,15 @@ export default function DropFile() {
               <ButtonsRow>
                 <UploadDatasetButton onUpload={handleDatasetChange} />
                 <button
-                  className="trash"
+                  className="trash ml-10"
                   disabled={!data}
                   outline
                   onClick={handleClear}
                 >
                   <FiTrash />
                 </button>
-                <Buttons
-                  className="analyze"
+                <button
+                  className="px-6 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 focus:outline-none "
                   disabled={!data && !!settings?.apikey}
                   onClick={handleAnalyze}
                 >
@@ -143,7 +143,7 @@ export default function DropFile() {
                   {(() => {
                     return dashboard && data ? "Re-analyze" : "Analyze";
                   })()}
-                </Buttons>
+                </button>
               </ButtonsRow>
             </PanelHeader>
             <PanelContent></PanelContent>

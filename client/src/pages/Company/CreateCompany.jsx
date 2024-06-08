@@ -59,28 +59,42 @@ const CreateCompany = () => {
             if (response.status === 403) {
                 navigate('/forbidden');
             } else if (response.ok) {
-                console.log('Company created successfully!');
+                console.log('Компания успешно создана!');
                 navigate('/company');
             } else {
                 const errorResponse = await response.json();
                 setErrorMessage(errorResponse.message);
             }
         } catch (error) {
-            console.error('Error creating company:', error);
-            setErrorMessage('An error occurred. Please try again.');
+            console.error('Ошибка при создании компании:', error);
+            setErrorMessage('Произошла ошибка. Пожалуйста, попробуйте еще раз.');
         }
     };
 
     return (
-        <div>
-            <h2>Create Company</h2>
-            {errorMessage && <p>{errorMessage}</p>}
+        <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl shadow-lg">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-5"> Create Company</h2>
+            {errorMessage && <p className="text-red-600 mb-4">{errorMessage}</p>}
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Name:</label>
-                    <input type="text" name="name" value={companyData.name} onChange={handleChange} required />
+                <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Enter the name of the company:</label>
+                    <input
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        type="text"
+                        name="name"
+                        value={companyData.name}
+                        onChange={handleChange}
+                        required
+                    />
                 </div>
-                <button type="submit">Create</button>
+                <div className="flex items-center justify-between">
+                    <button
+                        type="submit"
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+                    >
+                        Create
+                    </button>
+                </div>
             </form>
         </div>
     );

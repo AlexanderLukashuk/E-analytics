@@ -1,12 +1,3 @@
-export { default as Ecommerce } from "./Ecommerce.jsx";
-export { default as SignIn } from "./signin.tsx";
 export { default as DataInput } from "./DataInput.tsx";
 export { default as DropFile } from "./DropFile.tsx";
 export { default as ChatAI } from "./ChatAI.tsx";
-export { default as Area } from "./Charts/Area.jsx";
-export { default as Bar } from "./Charts/Bar.jsx";
-export { default as Financial } from "./Charts/Financial.jsx";
-export { default as Line } from "./Charts/Line.jsx";
-export { default as Pie } from "./Charts/Pie.jsx";
-export { default as Pyramid } from "./Charts/Pyramid.jsx";
-export { default as Stacked } from "./Charts/Stacked.jsx";

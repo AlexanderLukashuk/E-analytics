@@ -1,12 +1,12 @@
-import { 
-  ChartComponent, 
-  SeriesCollectionDirective, 
-  SeriesDirective, 
-  Inject, 
-  LineSeries, 
-  Category, 
-  Legend, 
-  Tooltip 
+import {
+  ChartComponent,
+  SeriesCollectionDirective,
+  SeriesDirective,
+  Inject,
+  LineSeries,
+  Category,
+  Legend,
+  Tooltip
 } from '@syncfusion/ej2-react-charts';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -51,7 +51,7 @@ const LineChart = () => {
 
         const revenueResponses = await Promise.all(promises);
         const revenueData = revenueResponses.map(response => response.data);
-        
+
         if (isMounted) {
           setCompanyName(response.data[0].name);
           const yearsRange = generateYearsRange(startYear, currentYear);
@@ -132,7 +132,8 @@ const LineChart = () => {
           ))}
         </SeriesCollectionDirective>
       </ChartComponent>
-      <button onClick={handlePrediction}>Prediction</button>
+      <button className="px-4 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 focus:outline-none mb-15 "
+        onClick={handlePrediction}>Prediction</button>
     </div>
   );
 };
