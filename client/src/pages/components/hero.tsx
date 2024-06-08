@@ -1,5 +1,6 @@
-import VideoThumb from "./public/data.png";
+import VideoThumb from "././public/data.png";
 import ModalVideo from "./modal-video.tsx";
+import React from "react";
 
 export default function Hero() {
   return (
