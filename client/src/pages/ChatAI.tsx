@@ -58,7 +58,7 @@ const ChatAI = (props) => {
       formData.append("file", file);
     }
 
-    fetch("http://localhost:5000/upload_csv", {
+    fetch("https://csv-ai.fly.dev/upload_csv", {
       method: "POST",
       body: formData,
     })
@@ -84,7 +84,7 @@ const ChatAI = (props) => {
 
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:5000/ask_question", {
+      const response = await fetch("https://csv-ai.fly.dev/ask_question", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -97,11 +97,13 @@ const ChatAI = (props) => {
       }
 
       const data = await response.json();
+      console.log(data);
       setLoading(false);
-      setResult(data.response);
+      setResult(data.response.answer);
+      console.log(data.response.answer);
       const botMessages = [
         { text: "Question: " + inputText, sender: "bot" },
-        { text: "Answer: " + data.response, sender: "bot" },
+        { text: "Answer: " + data.response.answer, sender: "bot" },
       ];
       setMessages((prevMessages) => [...prevMessages, ...botMessages]);
     } catch (error) {
