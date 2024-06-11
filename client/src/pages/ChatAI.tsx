@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import { Header } from "../components/index.jsx";
 import { useStateContext } from "../contexts/ContextProvider.js";
 import "../components/drop-file-input.css";
-import { Button } from "../components/index.jsx";
 import { ImageConfig } from "../config/ImageConfig.js";
 import uploadImg from "../assets/cloud-upload-regular-240.png";
 import { Loader } from "../components/layout/Loader.jsx";
